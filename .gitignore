@@ -1,0 +1,6 @@
+# Fixed syntax for executables
+*.exe
+*.o
+
+# Editor specific settings
+/.vscode/
