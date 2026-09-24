@@ -36,14 +36,55 @@ return (int) sum;
 ## Problem 5
 Explain the difference between local and global variables. Provide an example of each.
 
-> As the name suggests, local variables can be viewed and called locally within the function it was declared in. If a variable is declared outside a function  it becomes a global variable that can be referenced and viewed in any function. 
+> As the name suggests, local variables can be viewed and called locally within the function it was declared in. If a variable is declared outside a function  it becomes a global variable that can be referenced and viewed in any function. ah... a example.
+
+```C
+// to give an example I show a program that should not work and explain why followed up with a program that does work
+int GoBALLS = 5;
+
+int ThisFuncitonWillNotWork(int TrustMeBro);
+
+int main(void){
+	int localBalls = 0;
+	int NewBalls = ThisFunctionWillNotWork(localBalls);
+	return NewBalls;
+}
+
+int ThisFunctionWillNotWork(int TrustMeBro){
+	return localBalls + GloBalls; //this will not work to make it work you should be using the local variable TrustMeBro as localBalls is not defined globally nor locally. GloBalls is globally defined
+}
+```
+
+```C
+// to give an example I show a program that should not work and explain why followed up with a program that does work
+int GoBALLS = 5;
+
+int ThisFuncitonWillNotWork(int TrustMeBro);
+
+int main(void){
+	int localBalls = 0;
+	int NewBalls = ThisFunctionWillNotWork(localBalls);
+	return NewBalls;
+ } //should return 5
+
+int ThisFunctionWillNotWork(int TrustMeBro){
+	return TrustMeBro + GloBalls; //this will work
+}
+```
+
 ## Problem 6 
 How are strings declared and initialized in C? What is the role of the null terminator `'\0'`?
 
-
+> ```C
+> //strings are char arrays, there are libraries that help simplify this process but for this case I will only showcase a char array
+> char str[6] ="stiybt"
+>// this char string will have a "terminator" character that pretty much declares the end of the char array. "\0" is the terminator character
+>
 
 ## Problem 7
 What is a pointer in C? How do you pass a pointer to a function? What advantages are there to passing a pointer instead of a value?
+
+> In C a pointer "points" to the address where a variable may be stored. pass a pointer to a funciton you must dereference the pointer with the '*' operator. Advantages of using pointers instead of values include the ability to directly modify the passed data rather than copying equivalent data, multiple variable "return" allows you to "return" or modify muliple values with a function, and allows you to utilize the dynamic memory. 
 
 ## Problem 8
 What does the `*` operator and the `&` operator do in the context of pointers?
