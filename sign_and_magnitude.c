@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int sign_and_magnitude(void){
+int main(void){
+    //init and title 
+    printf("ECE 528/L - Daniel Jeorge Adrayan - HW1\n\n");
     int UserNum;
-    printf("Please input a number uwu \n\n");
+    printf("Please input a number \n\n");
     scanf("%i", &UserNum);
     printf("\n");
     if(UserNum > 0){

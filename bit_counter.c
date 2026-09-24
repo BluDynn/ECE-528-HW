@@ -1,11 +1,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-//#include <stdint.h>
+#include <stdint.h>
 
 void PissedMeOff(int UserIn, int NumOcc); 
 
 int main(void){
+    //init and title 
+    printf("ECE 528/L - Daniel Jeorge Adrayan - HW1\n\n");
     int UserInput;
     int PissingMeOffCounter = 0;
     //prompt and get user input 
@@ -24,18 +26,19 @@ int main(void){
 
     }
     // The actual bit counter portion
-    // use modulo possibly to count bits
+    // use modulo possibly to count bits . . . oh nvm thats not what it wants
 
-    //MSB 
-    int NumBits = 0;
+    //bit stuff 
+    uint32_t n = (uint32_t)UserInput;
+    uint32_t NumBits = 0;
 
-    while (UserInput > 0)
+    while (n != 0)
     {
-        NumBits += UserInput % 2;  // Adds 1 if the lowest bit is 1
-        UserInput /= 2;          // Shift right by one bit
+        n &= (n - 1);  
+         NumBits++;
     }
 
-    printf("your number has %d bits\n",NumBits);
+    printf("Daniel Jeorge Adrayan: %u has %u bit(s) set to 1.\n",(uint64_t)UserInput,NumBits);
 }
 
 /*

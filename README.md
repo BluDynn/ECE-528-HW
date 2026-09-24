@@ -57,10 +57,10 @@ int ThisFunctionWillNotWork(int TrustMeBro){
 ```
 
 ```C
-// to give an example I show a program that should not work and explain why followed up with a program that does work
+// the Function that should work
 int GoBALLS = 5;
 
-int ThisFuncitonWillNotWork(int TrustMeBro);
+int ThisFuncitonWillWork(int TrustMeBro);
 
 int main(void){
 	int localBalls = 0;
@@ -68,7 +68,7 @@ int main(void){
 	return NewBalls;
  } //should return 5
 
-int ThisFunctionWillNotWork(int TrustMeBro){
+int ThisFunctionWillWork(int TrustMeBro){
 	return TrustMeBro + GloBalls; //this will work
 }
 ```
